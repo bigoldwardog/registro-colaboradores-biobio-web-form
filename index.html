@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JURELEX - Todo lo bueno del mar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <main>
+        <!-- Actividades
+III. Activities
+Su tarea es construir esta
+
+Requerimiento 1: Formulario de registro Crea un formulario HTML con su respectivo CSS, con los campos:
+nombre, apellido, cargo y correo electrónico corporativo. Implementa validación con JavaScript: todos los
+campos son obligatorios, el correo debe tener formato válido y dominio @empresa.cl. Muestra mensajes
+de error descriptivos al usuario sin recargar la página. Organiza la lógica de validación en funciones
+reutilizables.
+Requerimiento 2: Listado dinámico de colaboradores Cada vez que se registre correctamente un
+colaborador, este debe agregarse a un arreglo de objetos y mostrarse en una tabla HTML generada
+dinámicamente con JavaScript. La tabla debe actualizarse sin recargar la página y mostrar todos los
+colaboradores registrados hasta el momento. Utiliza una función dedicada para renderizar la tabla.
+Requerimiento 3: Búsqueda y filtrado Agrega un campo de búsqueda sobre la tabla de colaboradores. Al
+escribir en él, la tabla debe filtrarse en tiempo real mostrando solo los registros cuyo nombre o cargo
+coincidan con el texto ingresado. Implementa el filtrado usando métodos de arreglo (filter, includes) dentro
+de una función reutilizable.
+Requerimiento 4: Eliminar colaborador Cada fila de la tabla debe incluir un botón "Eliminar". Al
+presionarlo, el colaborador correspondiente debe removerse del arreglo de objetos y la tabla debe
+Desarrollo Front End – TI3031
+Otoño 2026
+3
+Tecnologías de la Información y Ciberseguridad
+Inacap - San Pedro de la Paz
+actualizarse automáticamente para reflejar el cambio. Implementa la lógica de eliminación en una función
+que reciba el identificador del colaborador. -->
+<header class="header">
+    <img class="logo" src="assets/logo.png">
+    <section class="header-derecha">
+        <h1 class="titulo-header">JURELEX</h1>
+        <h3 class="subtitulo-header">- DESDE 1987 -</h3>
+</section>
+  
+
+</header>
+    
+    <nav class="navbar">
+        <h6 class="titulo-navbar inicio-navbar" >Inicio</h6>
+        <h6 class="titulo-navbar contacto-navbar">Contacto</h6>
+        <h6 class="titulo-navbar sobre-nosotros-navbar">Sobre nosotros</h6>
+    </nav>
+
+        <section class="hero">
+            <h1 class="titulo-hero">¡Regístrate!</h1>
+            <p class="subtitulo-hero">Ingresa tus datos en los siguientes campos, recuerda utilizar credenciales válidas y el correo institucional de la empresa: "@empresa.cl".</p>
+            <section class="formulario">
+                <h1 class="titulo-formulario">FORMULARIO DE REGISTRO</h1>
+            <label for="nombre" id="nombre">Nombre: </label>
+            <input type="text" id="nombre">
+            <label for="apellido" id ="apellido">Apellido:</label>
+            <input type="text" id="apellido">
+            <label for="cargo" id="cargo">Cargo:</label>
+            <input type="text" id="cargo">
+            <label for="correo" id="correo">Correo institucional: </label>
+            <input type="email" id="correo">
+            <button class="boton-enviar">Enviar</button>
+            </section>
+        </section>
+
+<footer class="footer">
+    XD
+</footer>
+    </main>
+</body>
+</html>
