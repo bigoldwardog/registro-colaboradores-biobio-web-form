@@ -42,33 +42,40 @@ que reciba el identificador del colaborador. -->
     <img class="logo" src="assets/logo.png">
     <section class="header-derecha">
         <h1 class="titulo-header">JURELEX</h1>
-        <h3 class="subtitulo-header">- DESDE 1987 -</h3>
+        <h3 class="subtitulo-header">- Todo lo bueno del mar-</h3>
 </section>
-  
-
 </header>
-    
-    <nav class="navbar">
-        <h6 class="titulo-navbar inicio-navbar" >Inicio</h6>
-        <h6 class="titulo-navbar contacto-navbar">Contacto</h6>
-        <h6 class="titulo-navbar sobre-nosotros-navbar">Sobre nosotros</h6>
-    </nav>
+<nav class="navbar">
+        <ul class="lista-navbar">
+            <li>
+                <a href="#">Inicio</a>
+            </li>
+            <li>
+                <a href="#">Contacto</a>
+            </li>
+            <li>
+                <a href="#">Sobre nosotros</a>
+            </li>
+        </ul>
+</nav>
 
         <section class="hero">
-            <h1 class="titulo-hero">¡Regístrate!</h1>
-            <p class="subtitulo-hero">Ingresa tus datos en los siguientes campos, recuerda utilizar credenciales válidas y el correo institucional de la empresa: "@empresa.cl".</p>
-            <section class="formulario">
+            <h2 class="titulo-hero">¡Regístrate!</h2>
+                <p class="subtitulo-hero">Ingresa tus datos en los campos mostrados a continuación. <span class="recordatorio">Recuerda utilizar credenciales válidas y el dominio institucional de la empresa: "@empresa.cl".</span></p>
+            
+            <form class="formulario">
                 <h1 class="titulo-formulario">FORMULARIO DE REGISTRO</h1>
-            <label for="nombre" id="nombre">Nombre: </label>
-            <input type="text" id="nombre">
-            <label for="apellido" id ="apellido">Apellido:</label>
-            <input type="text" id="apellido">
-            <label for="cargo" id="cargo">Cargo:</label>
-            <input type="text" id="cargo">
-            <label for="correo" id="correo">Correo institucional: </label>
-            <input type="email" id="correo">
-            <button class="boton-enviar">Enviar</button>
-            </section>
+                    <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre">
+                    <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido">
+                    <label for="cargo">Cargo:</label>
+                        <input type="text" id="cargo" name="cargo">
+                    <label for="correo">Correo laboral:</label>
+                        <input type="email" id="correo" name="correo">
+                    
+                        <button class="boton-enviar">Enviar Datos</button>
+            </form>
         </section>
 
 <footer class="footer">
