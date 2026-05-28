@@ -1,9 +1,13 @@
+// asignada array colaboradores
+let colaboradores = [];
+
 // constante de formulario con .getElementById(), este método revisa el DOM y encuentra el primer elemento HTML que coincida con el parámetro entregado
 // const, pues no cambia o no se espera que cambie.
 const formulario = document.getElementById("formulario");
 
 // añadido evento al formulario, previene la recarga de la página automáticamente
 formulario.addEventListener("submit", function (event) {
+
     event.preventDefault();
 
     limpiarErrores();
@@ -41,12 +45,50 @@ formulario.addEventListener("submit", function (event) {
         );
         formularioValido = false;
     }
-    // si todas las validaciones fueron se muestra el mensaje
+    // si todas las validaciones fueron correctas se muestra el mensaje
     if (formularioValido) {
         alert("Formulario enviado correctamente.");
+
+        // creación del array colaborador
+        const colaborador = {
+            id: Date.now(),
+            nombre: nombre,
+            apellido: apellido,
+            cargo: cargo,
+            correo: correo
+        };
+
+        colaboradores.push(colaborador);
+
+        renderizarTabla();
+
+        // limpia los valores contenidos en el formulario.
         formulario.reset();
     }
 });
+
+
+function renderizarTabla() {
+
+    const tabla = document.getElementById("tabla-colaboradores");
+
+    // limpia contenido previo para evitar duplicados.
+    tabla.innerHTML = "";
+
+    // recorre el arreglo colaboradores.
+    colaboradores.forEach(colaborador => {
+
+        // se agrega una fila dinámicamente.
+        tabla.innerHTML += `
+            <tr>
+                <td>${colaborador.nombre}</td>
+                <td>${colaborador.apellido}</td>
+                <td>${colaborador.cargo}</td>
+                <td>${colaborador.correo}</td>
+            </tr>
+        `;
+    });
+}
 
 
 function validarCampoVacio(valor) {
