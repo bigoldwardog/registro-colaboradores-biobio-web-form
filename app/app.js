@@ -10,4 +10,5 @@ formulario.addEventListener("submit", function (event) {
     const apellido = document.getElementById("apellido").value.trim();
     const cargo = document.getElementById("cargo").value.trim();
     const correo = document.getElementById("correo").value.trim();
+
 })
