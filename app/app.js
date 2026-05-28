@@ -15,7 +15,7 @@ formulario.addEventListener("submit", function (event) {
         mostrarError("nombre", "El nombre es obligatorio.");
         formularioValido = false;
     }
-    
+
 })
 
 function validarCampoVacio(valor) {
@@ -25,4 +25,9 @@ function validarCampoVacio(valor) {
 function validarCorreo(correo) {
     const regex = /^[a-zA-Z0-9._%+-]+@empresa\.cl$/;
     return regex.test(correo);
+}
+
+function mostrarError(campo, mensaje) {
+    const elementoError = document.getElementById(`error-${campo}`);
+    elementoError.textContent = mensaje;
 }
