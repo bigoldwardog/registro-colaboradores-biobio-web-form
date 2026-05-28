@@ -111,6 +111,21 @@ button:active {
     margin: auto;
 }
 
-.footer {
+footer {
     background-color: rgba(10, 46, 62);
+    color:white;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 16px 0px 0px 0px;
 }
+
+.lista-footer {
+    display: flex;
+    flex-direction: row;
+    color:white;
+    gap: 8px;
+    margin: 16px 16px 16px 16px;
+    list-style: none;
+}
+

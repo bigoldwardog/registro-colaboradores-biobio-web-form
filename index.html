@@ -17,10 +17,7 @@ III. Activities
 Su tarea es construir esta
 
 Requerimiento 1: Formulario de registro Crea un formulario HTML con su respectivo CSS, con los campos:
-nombre, apellido, cargo y correo electrónico corporativo. Implementa validación con JavaScript: todos los
-campos son obligatorios, el correo debe tener formato válido y dominio @empresa.cl. Muestra mensajes
-de error descriptivos al usuario sin recargar la página. Organiza la lógica de validación en funciones
-reutilizables.
+nombre, apellido, cargo y correo electrónico corporativo. 
 Requerimiento 2: Listado dinámico de colaboradores Cada vez que se registre correctamente un
 colaborador, este debe agregarse a un arreglo de objetos y mostrarse en una tabla HTML generada
 dinámicamente con JavaScript. La tabla debe actualizarse sin recargar la página y mostrar todos los
@@ -67,20 +64,41 @@ que reciba el identificador del colaborador. -->
                 <h1 class="titulo-formulario">FORMULARIO DE REGISTRO</h1>
                     <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre">
+                        <small class="error" id="error-nombre"></small>
                     <label for="apellido">Apellido:</label>
                         <input type="text" id="apellido" name="apellido">
+                        <small class="error" id="error-apellido"></small>
                     <label for="cargo">Cargo:</label>
                         <input type="text" id="cargo" name="cargo">
+                        <small class="error" id="error-cargo"></small>
                     <label for="correo">Correo laboral:</label>
                         <input type="email" id="correo" name="correo">
+                        <small class="error" id="error-correo"></small>
                     
                         <button class="boton-enviar">Enviar Datos</button>
             </form>
         </section>
 
 <footer class="footer">
-    XD
+    <section class="footer-izquierda">
+        <h5>© 2026 JURELEX S.A - Todos los derechos reservados.</h5>
+    </section>
+    <section class="footer-derecha">
+        <ul class="lista-footer">
+            <li>
+                <a href="#">Instagram</a>
+            </li>
+             <li>
+                <a href="#">Facebook</a>
+            </li>
+        </ul>
+            
+        
+    </section>
+  
 </footer>
     </main>
+
+<script src="app/app.js"></script>
 </body>
 </html>
