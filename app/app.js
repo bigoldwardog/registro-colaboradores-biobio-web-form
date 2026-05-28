@@ -11,4 +11,18 @@ formulario.addEventListener("submit", function (event) {
     const cargo = document.getElementById("cargo").value.trim();
     const correo = document.getElementById("correo").value.trim();
 
+     if (!validarCampoVacio(nombre)) {
+        mostrarError("nombre", "El nombre es obligatorio.");
+        formularioValido = false;
+    }
+    
 })
+
+function validarCampoVacio(valor) {
+    return valor !== "";
+}
+
+function validarCorreo(correo) {
+    const regex = /^[a-zA-Z0-9._%+-]+@empresa\.cl$/;
+    return regex.test(correo);
+}
