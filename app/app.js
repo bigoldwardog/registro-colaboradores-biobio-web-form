@@ -5,12 +5,48 @@ let colaboradores = [];
 // const, pues no cambia o no se espera que cambie.
 const formulario = document.getElementById("formulario");
 
+const busqueda = document.getElementById("busqueda");
+
+
+// evento que detecta escritura en tiempo real
+busqueda.addEventListener("input", function () {
+
+    // texto ingresado convertido a minúsculas
+    const textoBusqueda = busqueda.value.toLowerCase();
+
+    filtrarColaboradores(textoBusqueda);
+});
+
+
+// función reutilizable de filtrado
+function filtrarColaboradores(textoBusqueda) {
+
+    // filter() crea un nuevo arreglo filtrado
+    const colaboradoresFiltrados = colaboradores.filter(colaborador => {
+
+        // valores en minúsculas
+        const nombre = colaborador.nombre.toLowerCase();
+        const cargo = colaborador.cargo.toLowerCase();
+
+        // includes() busca coincidencias parciales
+        return (
+            nombre.includes(textoBusqueda) ||
+            cargo.includes(textoBusqueda)
+        );
+    });
+
+    // renderiza solo resultados filtrados
+    renderizarTabla(colaboradoresFiltrados);
+}
+
+
 // añadido evento al formulario, previene la recarga de la página automáticamente
 formulario.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
     limpiarErrores();
+
     // constantes de cada campo perteneciente al formulario con .getElementById, se obtiene el valor del campo con .value y se hace un "strip" del contenido quitando espacios al inicio y al final del string con .trim()
     const nombre = document.getElementById("nombre").value.trim();
     const apellido = document.getElementById("apellido").value.trim();
@@ -45,8 +81,10 @@ formulario.addEventListener("submit", function (event) {
         );
         formularioValido = false;
     }
+
     // si todas las validaciones fueron correctas se muestra el mensaje
     if (formularioValido) {
+
         alert("Formulario enviado correctamente.");
 
         // creación del array colaborador
@@ -68,15 +106,15 @@ formulario.addEventListener("submit", function (event) {
 });
 
 
-function renderizarTabla() {
+function renderizarTabla(lista = colaboradores) {
 
     const tabla = document.getElementById("tabla-colaboradores");
 
     // limpia contenido previo para evitar duplicados.
     tabla.innerHTML = "";
 
-    // recorre el arreglo colaboradores.
-    colaboradores.forEach(colaborador => {
+    // recorre el arreglo recibido.
+    lista.forEach(colaborador => {
 
         // se agrega una fila dinámicamente.
         tabla.innerHTML += `
