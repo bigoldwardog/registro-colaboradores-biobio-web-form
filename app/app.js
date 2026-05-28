@@ -11,12 +11,38 @@ formulario.addEventListener("submit", function (event) {
     const cargo = document.getElementById("cargo").value.trim();
     const correo = document.getElementById("correo").value.trim();
 
-     if (!validarCampoVacio(nombre)) {
+    let formularioValido = true;
+
+    if (!validarCampoVacio(nombre)) {
         mostrarError("nombre", "El nombre es obligatorio.");
         formularioValido = false;
     }
 
-})
+    if (!validarCampoVacio(apellido)) {
+        mostrarError("apellido", "El apellido es obligatorio.");
+        formularioValido = false;
+    }
+
+    if (!validarCampoVacio(cargo)) {
+        mostrarError("cargo", "El cargo es obligatorio.");
+        formularioValido = false;
+    }
+
+    if (!validarCampoVacio(correo)) {
+        mostrarError("correo", "El correo es obligatorio.");
+        formularioValido = false;
+    } else if (!validarCorreo(correo)) {
+        mostrarError(
+            "correo",
+            "Debes ingresar un correo válido con dominio @empresa.cl"
+        );
+        formularioValido = false;
+    }
+    if (formularioValido) {
+        alert("Formulario enviado correctamente.");
+        formulario.reset();
+    }
+});
 
 function validarCampoVacio(valor) {
     return valor !== "";
